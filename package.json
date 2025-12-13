@@ -1,0 +1,30 @@
+{
+  "name": "expressjs-project-uas-kel9-myroomhub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon.app.js"
+  },
+  "type" : "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marccz01/expressjs-project-uas-KEL9-MyRoomHub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/marccz01/expressjs-project-uas-KEL9-MyRoomHub/issues"
+  },
+  "homepage": "https://github.com/marccz01/expressjs-project-uas-KEL9-MyRoomHub#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
