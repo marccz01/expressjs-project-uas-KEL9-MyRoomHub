@@ -1,15 +1,14 @@
 import mongoose from "mongoose";
-import movieModel from "../models/movieModel.js";
+import bookingModel from "../models/bookingModel.js";
 
 export const booking = async (req, res) => {
     try {
-        // Hanya menampilkan movie milik user yang sedang login
         const booking = await bookingModel.find({
             createdBy: req.user?.user_id
         }).sort({createdAt: -1});
 
         res.status(200).json({
-            message: "Daftar semua booking",
+            message: "Daftar semua ruangan",
             data: booking
         })
 
@@ -43,13 +42,13 @@ export const addNewBooking = async (req, res) => {
         });
 
         res.status(201).json({
-            message: "Berhasil menambahkan booking baru",
+            message: "Berhasil menambahkan ruang baru",
             data: booking
         });
 
     } catch (error) {
         return res.status(500).json({
-            message: "Gagal menambahkan booking baru",
+            message: "Gagal menambahkan ruang baru",
             error: error.message,
             data: null
         });
@@ -74,13 +73,13 @@ export const detailBooking = async (req, res) => {
 
         if (!booking) {
             return res.status(404).json({
-                message: "Booking tidak ditemukan",
+                message: "Ruangan tidak ditemukan",
                 data: null
             });
         }
 
         return res.status(200).json({
-            message: "Detail booking",
+            message: "Detail ruangan",
             data: booking
         });
     } catch (error) {
@@ -115,13 +114,13 @@ export const updateBooking = async (req, res) => {
 
         if (!updatedBooking) {
             return res.status(404).json({
-                message: "Booking tidak ditemukan atau akses ditolak",
+                message: "Ruangan tidak ditemukan atau akses ditolak",
                 data: null
             });
         }
 
         return res.status(200).json({
-            message: "Berhasil mengupdate booking",
+            message: "Berhasil mengupdate ruangan",
             data: updatedBooking
         });
     } catch (error) {
@@ -151,13 +150,13 @@ export const deleteBooking = async (req, res) => {
 
         if (!deletedBooking) {
             return res.status(404).json({
-                message: "Booking tidak ditemukan atau akses ditolak",
+                message: "Ruangan tidak ditemukan atau akses ditolak",
                 data: null
             });
         }
 
         return res.status(200).json({
-            message: "Berhasil menghapus booking",
+            message: "Berhasil menghapus ruangan",
             data: deletedBooking
         });
     } catch (error) {
