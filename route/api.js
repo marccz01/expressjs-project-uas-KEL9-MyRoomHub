@@ -1,7 +1,7 @@
 import express from "express";
 import * as userController from "../controllers/userController.js";
 import * as bookingController from "../controllers/bookingController.js";
-import { authenticateTokenMiddleware } from "../middlewares/authenticateTokenMiddleware.js";
+import { authenticateTokenMiddleware } from "../middleware/authenticateTokenMiddleware.js";
 
 const api = express.Router()
 
