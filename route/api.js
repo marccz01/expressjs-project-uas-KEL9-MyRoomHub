@@ -8,10 +8,10 @@ const api = express.Router()
 api.post ("/signup", userController.signUp)
 api.post("/signin", userController.signIn)
 
-api.post("/booking", authenticateTokenMiddleware, bookingController.addNewBooking)
-api.get("/booking", authenticateTokenMiddleware, bookingController.booking)
-api.get("/booking/:id", authenticateTokenMiddleware, bookingController.detailBooking)
-api.put("/boooking/:id", authenticateTokenMiddleware, bookingController.updateBooking)
+api.post("/booking", authenticateTokenMiddleware, bookingController.CreateBooking)
+api.get("/booking", authenticateTokenMiddleware, bookingController.ListBooking)
+api.put("/booking/:id", authenticateTokenMiddleware, bookingController.updateBooking)
 api.delete("/booking/:id", authenticateTokenMiddleware, bookingController.deleteBooking)
+api.get("/booking/:id", authenticateTokenMiddleware, bookingController.detailBooking)
 
 export default api
