@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "90e0ffe4-7444-47ec-8036-31baf64dc1dc",
+		"name": "Kel_9_Express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49265401",
+		"_collection_link": "https://meilisaapriyani-8795584.postman.co/workspace/Mei's-Workspace~2d7b56a0-c398-4c66-8df9-c917bfba5766/collection/49265401-90e0ffe4-7444-47ec-8036-31baf64dc1dc?action=share&source=collection_link&creator=49265401"
+	},
+	"item": [
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjk0MmM3ZDgzMmY1MzdmM2FlZjk4YmRhIiwidXNlcm5hbWUiOiJLZWxvbXBvazkiLCJpYXQiOjE3NjU5ODQ2NzMsImV4cCI6MTc2NTk4NTU3M30.Djs8CXZxdxU5qJTTUjRvZOiLAJ-kXMCa2_2mbp1QU4U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"kelompok9@gmail.com\",\r\n    \"password\" : \"mantap\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"signup"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
