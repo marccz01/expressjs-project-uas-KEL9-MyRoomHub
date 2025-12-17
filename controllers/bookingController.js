@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import bookingModel from "../models/bookingModel.js";
 
-export const booking = async (req, res) => {
+export const ListBooking = async (req, res) => {
     try {
         const booking = await bookingModel.find({
             createdBy: req.user?.user_id
@@ -21,7 +21,7 @@ export const booking = async (req, res) => {
     }
 };
 
-export const addNewBooking = async (req, res) => {
+export const CreateBooking = async (req, res) => {
     try {
         const { tempat, namaRuangan, waktu, statusPemesanan } = req.body;
 
