@@ -8,8 +8,7 @@ export const authenticateTokenMiddleware = (req, res, next) => {
             error: "No Token provided", 
         });
     }
-
-    //Format token biasanya "Bearer [TOKEN]", ambil elemen kedua 
+ 
     const token = authHeader.split(" ")[1];
     if (!token) {
         return res.status(401).send({
@@ -25,26 +24,7 @@ export const authenticateTokenMiddleware = (req, res, next) => {
             });
         }
 
-        //Menyimpan data user yang terdekripsi ke dalam object request
         req.user = decoded;
         next();
     });
 }
-
-// exports.verifyToken = (req, res, next) => {
-//   const token = req.headers.authorization?.split(" ")[1];
-
-//   if (!token) return res.status(401).json({ message: 'No token' });
-
-//   const decoded = jwt.verify(token, 'SECRET_KEY');
-//   req.user = decoded; // { id, role }
-
-//   next();
-// };
-
-// exports.isAdmin = (req, res, next) => {
-//   if (req.user.role !== 'admin') {
-//     return res.status(403).json({ message: 'Akses ditolak' });
-//   }
-//   next();
-// };

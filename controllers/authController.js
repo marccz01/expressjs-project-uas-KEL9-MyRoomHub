@@ -1,4 +1,3 @@
-// import { compare } from "bcrypt";
 import UserModel from "../models/userModel.js";
 import { compare, hash } from "../utils/hashUtil.js";
 import { jwtSignUtil } from "../utils/jwtSignUtil.js";
@@ -16,7 +15,6 @@ export const register = async (req, res) => {
             username : registerData.username,
             email : registerData.email,
             password : hashPassword,
-            role: 'user'
         })
 
         await user.save();
@@ -68,8 +66,7 @@ export const login = async(req, res) => {
 
         const token = jwt.sign(
         {
-            id: user._id,
-            role: user.role // 🔥 ROLE MASUK TOKEN
+            id: user._id
         },
             'SECRET_KEY',
         { expiresIn: '1h' }
